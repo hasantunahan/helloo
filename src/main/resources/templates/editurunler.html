@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürün Düzenle</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <!-- iconlar için-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link th:href="@{css/table.css}" href="/static/css/table.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+</head>
+
+<body style="margin-top: 50px;">
+<div class="container" >
+    <div class="jumbotron">
+        <h2 style="text-align: center; font-family: 'TR Fujiyama'">Ürün Düzenle</h2>
+    </div>
+</div>
+<div class="container">
+    <form action="#" th:action="@{/editurunKaydet}" th:object="${urunlist}" method="post">
+        <input type="hidden"   th:value="${id}" th:field="*{id}">
+        <table>
+            <tr>
+                <td width="10%">Ürün Adi : </td>
+                <td width="60%" align="left">
+                    <input type="text" th:field="*{urunadi}">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="10%">Ürün Fiyatı : </td>
+                <td width="60%" align="left">
+                    <input type="text" th:field="*{urunfiyati}">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="10%">Ürün Adedi : </td>
+                <td width="60%" align="left">
+                    <input type="text" th:field="*{urunadedi}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Kategoriler : </td>
+                <td>
+                    <select th:field="*{urunkategori}">
+                        <option th:each="urunkategori : ${kategoriler}" th:value="${urunkategori}" th:text="${urunkategori}">Kategori</option>
+                    </select>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td>
+                    <input class="btn btn-warning" type="submit" value="Guncelle">
+                </td>
+
+            </tr>
+        </table>
+    </form>
+
+</div>
+
+</body>
+</html>

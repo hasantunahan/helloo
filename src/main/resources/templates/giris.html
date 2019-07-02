@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link th:href="@{css/login.css}" href="/static/css/login.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+   <script type="application/javascript" th:src="@{js/giris.js}" src="/static/js/giris.js"></script>
+</head>
+<body class="bodyClass"  >
+<div class="container">
+    <table style="margin-left: 80px;">
+        <tr>
+            <td> <!--kullanıcı png-->
+                <div style="margin-right: 50px; margin-left: 50px;">
+                    <div align="center" style="margin: auto"> <img style="margin-bottom: 100px;" width="250px" height="250px" th:src="@{images/admin.png}" src="/static/images/admin.png" alt="Görüntülenemiyor">
+                    </div>
+                </div>
+            </td>
+
+
+            <td> <!--giriş form-->
+                <div style="margin-right: 50px; margin-left: 50px;">
+                    <div align="center" style="margin: auto"> <img width="250px" height="100px" th:src="@{images/product.png}" src="/static/images/product.png" alt="Görüntülenemiyor">
+                    </div>
+                </div>
+                <br>
+                <div class="login-popup-wrap new_login_popup">
+                    <!--
+                     <div class="login-popup-heading text-center">
+                         <h4><i class="fa fa-lock" aria-hidden="true"></i> GirisEkran </h4>
+                         <span style="color: #d73814" th:if="${param.error}">Kullanıcı adı veya şifre yanlış</span>
+                     </div>
+                               -->
+                    <!--<form accept-charset="utf-8" method="post" action="">-->
+                    <form id="loginMember" role="form" th:action="@{/login}" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Kullanici Adi" name="username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Şifre" name="password">
+                        </div>
+                        <!--<div class="row align-items-center remember" style="margin-left: 20px">
+                            <input type="checkbox">Beni hatırla
+                        </div>-->
+                        <button  type="submit"  class="btn btn-default login-popup-btn" name="submit" value="1" id="login">Giris</button>
+                    </form>
+                    <div class="form-group text-center">
+                        <a style="color: #000;" class="pwd-forget" href="javascript:void(0)" id="open_forgotPassword">Sifremi Unuttum</a>
+                    </div>
+                    <div style="color: black" class="text-center">Kayit olmak icin?<a style="color: lightblue" href="/kayitol">Buraya tiklayiniz.</a></div>
+                </div>
+
+            </td>
+
+
+        </tr>
+    </table>
+
+
+</div>
+</body>
+</html>

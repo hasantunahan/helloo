@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link th:href="@{css/login.css}" href="/static/css/login.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body class="bodyClass" style="margin-top: 50px;" >
+<div class="container" >
+    <div class="jumbotron" size="500px">
+
+        <h2 style="text-align: center; font-family: 'TR Fujiyama'">Kullanıcı Düzenle</h2>
+    </div>
+</div>
+<div class="container">
+
+    <br>
+    <!--<form accept-charset="utf-8" method="post" action="">-->
+    <form id="loginMember" role="form" th:action="@{/editSave}" th:object="${kullaniciForm}"  method="post">
+        <span style="color: #d73814" th:if="${param.error}">Lütfen verileri istenildiği gibi giriniz.</span>
+        <input type="hidden"   th:value="${id}" th:field="*{id}">
+        <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="username" name="username">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="isim" placeholder="adi" name="isim">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="soyisim" placeholder="soyisim" name="soyisim">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="mail" placeholder="email" name="mail">
+        </div>
+        <button type="submit"  class="btn btn-warning" name="submit" value="1">Güncelle</button>
+        <a style="margin-left: 5px;" class="btn btn-secondary" href="/kullanici">Geri</a>
+    </form>
+</div>
+
+
+</body>
+</html>

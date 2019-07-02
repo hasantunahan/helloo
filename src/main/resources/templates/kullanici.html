@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Kullanici İşlemleri</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <!-- iconlar için-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link th:href="@{css/kullanici.css}" href="/static/css/kullanici.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+    <link th:href="@{css/table.css}" href="/static/css/table.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+    <script type="application/javascript" th:src="@{js/giris.js}" src="/static/js/giris.js"></script>
+    <link rel="stylesheet" th:href="@{css/base.css}" href="/static/css/base.css">
+    <link rel="stylesheet" th:href="@{css/skeleton.css}" href="/static/css/skeleton.css">
+    <link rel="stylesheet" th:href="@{css/screen.css}" href="/static/css/screen.css" >
+</head>
+<body>
+<div id="header">
+    <div class="container" style="color: #000;">
+        <!-- Header | Logo, Menu
+            ================================================== -->
+        <div class="logo"><a  href="/anasayfa"><img width="100px;" height="50px" th:src="@{images/product2.png}" src="/static/images/product2.png" alt="Görüntülenemiyor"  /></a></div>
+        <div class="mainmenu">
+            <div id="mainmenu">
+                <ul class="sf-menu">
+                    <li><a href="/anasayfa" >Home</a></li>
+                    <li><a href="/kullanici" id="visited">Kullanıcı</a></li>
+                    <li><a href="/urunler">Urunler</a>
+                    <li><a href="/musteri">Müşteri</a></li>
+                    <li><a href="/satis">Fatura İşlemleri</a>
+                        <ul>
+                            <li><a href="/raporlar">Raporlar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/hakkinda">Hakkında</a>
+                    <ul>
+                        <li><a href="/logout">Çıkış</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- mainmenu ends here -->
+
+            <!-- Responsive Menu -->
+            <form id="responsive-menu" action="#" method="post">
+                <select>
+                    <option value="">Navigation</option>
+                    <option value="index.html">Home</option>
+                    <option value="about.html">About</option>
+                    <option value="portfolio.html">Portfolio</option>
+                    <option value="portfolioproject.html">Portfolio Project</option>
+                    <option value="blog.html">Blog</option>
+                    <option value="singleblog.html">Single Post</option>
+                    <option value="features.html">Features</option>
+                    <option value="contact.html">Contact</option>
+                </select>
+            </form>
+        </div>
+        <!-- mainmenu ends here -->
+    </div>
+    <!-- container ends here -->
+</div>
+
+<!--<nav class="navbar navbar-expand-lg  navbar-light"  style="background-color: #3F2B47;">
+
+    <a  style="background-color:#DF7744; color: black" href="/anasayfa" class="btn btn-default btn-s">
+        <span class="glyphicon glyphicon-gbp"></span> Stok Takip
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="/kullanici"><span style="color: white" class="glyphicon glyphicon-user"></span> Kullanici İşlemleri </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  href="/urunler"><span class="glyphicon glyphicon-tags"></span> Ürün İşlemleri</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/musteri"><span class="glyphicon glyphicon-user"></span> Müşteriler</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/satis"><span class="glyphicon glyphicon-shopping-cart"></span> Satış İşlemleri</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/hakkinda"><span class="glyphicon glyphicon-info-sign"></span> Hakkında</a>
+            </li>
+        </ul>
+    </div>
+</nav>-->
+
+<div class="infobox">
+    <div class="container info">
+        <header>
+            <h2>Kullanıcı İşlemleri</h2>
+            <p class="infop">Bu ekranda kullanıcı silip düzenleyebiliriz.</p>
+        </header>
+        <hr class="separator">
+    </div>
+    <!-- container ends here -->
+</div>
+
+<div class="container" style="margin-top: 50px;">
+    <table>
+        <tr>
+
+            <td> <!--TABLO-->
+                <table style="margin-right: 25px" class="table table-hover " border="2" id="t01" width="50%" cellpadding="2" >
+                    <tr>
+                        <th class="table-danger">Username</th>
+                        <th class="table-danger">İsim</th>
+                        <th class="table-danger">Soyİsim</th>
+                        <th class="table-danger">Email</th>
+                        <th  class="table-danger">#Düzenle</th>
+                        <th  class="table-danger">#Sil</th>
+                    </tr>
+                    <tr  th:each="user : ${list}" >
+                        <td th:text="${user.username}"></td>
+                        <td th:text="${user.isim}"></td>
+                        <td th:text="${user.soyisim}"></td>
+                        <td  th:text="${user.mail}"></td>
+                        <td> <a  class="btn btn-warning" th:href="  @{'/editUser/'+ ${user.id}} ">Edit</a> </td>
+                        <td> <a  class="btn btn-danger" th:href="  @{'/deleteUser/'+ ${user.id}} ">Sil</a> </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

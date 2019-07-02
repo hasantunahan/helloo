@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="margin-right: 50px" class="table table-hover " border="2" id="t01" width="50%" cellpadding="2" >
+    <tr>
+        <th class="table-danger">UrunAdi</th>
+        <th class="table-danger">UrunFiyatı</th>
+        <th class="table-danger">UrunAdedi</th>
+        <th class="table-danger">UrunKategori</th>
+        <th class="table-danger">Edit</th>
+        <th class="table-danger">Sil</th>
+
+    </tr>
+
+    <tr  th:each="urunler : ${list}" >
+        <td th:text="${urunler.urunadi}"></td>
+        <td th:text="${urunler.urunfiyati}"></td>
+        <td th:text="${urunler.urunadedi}"></td>
+        <td  th:text="${urunler.urunkategori}"></td>
+        <td class="table-dark"  > <a   th:href="  @{'/editurunler/'+ ${urunler.id}} ">Edit</a> </td>
+        <td class="table-dark"  > <a   th:href="  @{'/deleteUrun/'+ ${urunler.id}} ">Sil</a> </td>
+
+    </tr>
+</table>
+</body>
+</html>
